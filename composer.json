@@ -1,0 +1,27 @@
+{
+    "name": "jackiedo/shoppingcart",
+    "description": "A small package use to create shopping cart in Laravel 4.2",
+    "keywords": ["shoppingcart", "shopping", "cart", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jackie Do",
+            "email": "anhvudo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "illuminate/session": "4.2.*",
+        "illuminate/events": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Jackiedo\\Shoppingcart\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
