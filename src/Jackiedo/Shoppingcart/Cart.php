@@ -328,15 +328,15 @@ class Cart {
 	protected function addRow($id, $title, $qty, $price, array $options = array())
 	{
 		if(empty($id) || empty($title)) {
-			throw new Exceptions\ShoppingcartInvalidItemException('Invalid id or title.');
+			throw new Exceptions\ShoppingcartInvalidItemException('Invalid item id or item title argument.');
 		}
 
 		if( ! is_numeric($qty) || $qty < 1) {
-			throw new Exceptions\ShoppingcartInvalidQtyException('Invalid quantity.');
+			throw new Exceptions\ShoppingcartInvalidQtyException('Invalid item quantity argument.');
 		}
 
 		if( ! is_numeric($price) || $price < 0) {
-			throw new Exceptions\ShoppingcartInvalidPriceException('Invalid price.');
+			throw new Exceptions\ShoppingcartInvalidPriceException('Invalid item price argument.');
 		}
 
 		$cart = $this->getContent();

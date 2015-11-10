@@ -1,6 +1,6 @@
 {
     "name": "jackiedo/shoppingcart",
-    "description": "A small package use to create shopping cart in Laravel 4.2",
+    "description": "A small package use to create shopping cart in Laravel",
     "keywords": ["shoppingcart", "shopping", "cart", "laravel"],
     "license": "MIT",
     "authors": [

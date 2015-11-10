@@ -10,6 +10,7 @@ Look at one of the following topics to learn more about LaravelShoppingCart
 * [Collections](#collections)
 * [Instances](#instances)
 * [Models](#models)
+* [Exceptions](#exceptions)
 * [Events](#events)
 
 # Installation
@@ -17,8 +18,6 @@ Look at one of the following topics to learn more about LaravelShoppingCart
 You can install this package through [Composer](https://getcomposer.org).
 
 - First, edit your project's `composer.json` file to require `jackiedo/shoppingcart`:
-
-### Laravel 4.2 and below
 
 ```php
 ...
@@ -402,18 +401,30 @@ $item->shopping_product->title; // $item->shopping_product is instance of 'App\M
 The keyword to access the model is the snake case of model name you associated (Ex: Model name is ShoppingProduct, then the keyword is shopping_product).
 The `associate()` method has a second optional parameter for specifying the model namespace.
 
+# Exceptions
+
+The Cart package will throw exceptions if something goes wrong. This way it's easier to debug your code using the Cart package or to handle the error based on the type of exceptions. The Cart packages can throw the following exceptions:
+
+| Exception                             | Reason                                                                           |
+| ------------------------------------- | -------------------------------------------------------------------------------- |
+| *ShoppingcartInvalidItemException*    | When a new product misses id or title argument (`id`, `title`)                   |
+| *ShoppingcartInvalidPriceException*   | When a non-numeric or negative price is passed                                   |
+| *ShoppingcartInvalidQtyException*     | When a non-numeric or less than 1 quantity is passed                             |
+| *ShoppingcartInvalidRawIDException*   | When the `$rawId` that got passed doesn't exists in the current cart             |
+| *ShoppingcartUnknownModelException*   | When an unknown model is associated to a cart row                                |
+
 # Events
 
 | Event Name        | Parameters            |
 | ----------------- | --------------------- |
-| `cart.adding`     | ($attributes, $cart); |
-| `cart.added`      | ($attributes, $cart); |
-| `cart.updating`   | ($row, $cart);        |
-| `cart.updated`    | ($row, $cart);        |
-| `cart.removing`   | ($row, $cart);        |
-| `cart.removed`    | ($row, $cart);        |
-| `cart.destroying` | ($cart);              |
-| `cart.destroyed`  | ($cart);              |
+| *cart.adding*     | ($attributes, $cart); |
+| *cart.added*      | ($attributes, $cart); |
+| *cart.updating*   | ($row, $cart);        |
+| *cart.updated*    | ($row, $cart);        |
+| *cart.removing*   | ($row, $cart);        |
+| *cart.removed*    | ($row, $cart);        |
+| *cart.destroying* | ($cart);              |
+| *cart.destroyed*  | ($cart);              |
 
 You can easily handle these events, for example:
 
