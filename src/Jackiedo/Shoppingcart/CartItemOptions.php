@@ -7,37 +7,35 @@ use Illuminate\Support\Collection;
  *
  * Adapted from https://github.com/Crinsane/LaravelShoppingcart
  *
- * @package     Luni CMS
- * @author      Jackie Do <anhvudo@gmail.com>
- * @copyright   2015 VTech <vtech@gmail.com>
- * @link        https://github.com/overtrue
+ * @package 	JackieDo/ShoppingCart
+ * @author 		Jackie Do <anhvudo@gmail.com>
+ * @author 		Rob Gloudemans <http://robgloudemans.nl>
  */
-class CartItemOptions extends Collection {
+class CartItemOptions extends Collection
+{
 
-	/**
+    /**
      * Magic accessor.
      *
      * @param string $property Property name.
      *
      * @return mixed
      */
-	public function __get($arg)
-	{
-		if($this->has($arg))
-		{
-			return $this->get($arg);
-		}
+    public function __get($arg)
+    {
+        if ($this->has($arg)) {
+            return $this->get($arg);
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public function search($search, $strict = false)
-	{
-		if ($this->intersect($search)->isEmpty()) {
-			return false;
-		}
+    public function search($search, $strict = false)
+    {
+        if ($this->intersect($search)->isEmpty()) {
+            return false;
+        }
 
-		return true;
-	}
-
+        return true;
+    }
 }

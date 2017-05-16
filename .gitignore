@@ -1,7 +1,5 @@
-/bootstrap/compiled.php
-.env.*.php
-.env.php
-.env
+/vendor
 composer.phar
 composer.lock
+.php_cs.cache
 .DS_Store

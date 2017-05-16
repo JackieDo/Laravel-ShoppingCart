@@ -8,12 +8,12 @@ use Illuminate\Support\Str;
  *
  * Adapted from https://github.com/Crinsane/LaravelShoppingcart
  *
- * @package     Luni CMS
+ * @package     JackieDo/ShoppingCart
  * @author      Jackie Do <anhvudo@gmail.com>
- * @copyright   2015 VTech <vtech@gmail.com>
- * @link        https://github.com/overtrue
+ * @author      Rob Gloudemans <http://robgloudemans.nl>
  */
-class CartItem extends Collection {
+class CartItem extends Collection
+{
 
     /**
      * The Eloquent model a cart is associated with.
@@ -64,15 +64,16 @@ class CartItem extends Collection {
     public function search($search, $strict = false)
     {
         $found = false;
-        foreach ($search as $key => $value)
-        {
+        foreach ($search as $key => $value) {
             if ($key === 'options') {
                 $found = $this->{$key}->search($value);
             } else {
                 $found = ($this->{$key} == $value) ? true : false;
             }
 
-            if ($found) return true;
+            if ($found) {
+                return true;
+            }
         }
 
         return $found;
