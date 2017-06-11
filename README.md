@@ -1,6 +1,7 @@
 # Laravel Shopping Cart
 
 A small package use to create shopping cart in Laravel application. (Now just only support Laravel 4.x)
+> This package is abandoned. Please use [Laravel-Cart](https://github.com/JackieDo/Laravel-Cart) for replacement.
 
 # Overview
 Look at one of the following topics to learn more about LaravelShoppingCart
